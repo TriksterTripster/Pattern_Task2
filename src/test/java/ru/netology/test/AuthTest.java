@@ -17,7 +17,7 @@ public class AuthTest {
     }
 
     @Test
-        //TODO Тест на наличие пользователя
+
     void shouldCheckThePresenceOfTheUser() {
         var validUser = generateUser("active");
         $("[data-test-id=login] input").setValue(validUser.getLogin());
@@ -27,7 +27,7 @@ public class AuthTest {
     }
 
     @Test
-        //TODO Тест статус пользователя
+
     void shouldCheckTheUserStatus() {
         var blockedUser = generateUser("blocked");
         $("[data-test-id=login] input").setValue(blockedUser.getLogin());
@@ -37,7 +37,7 @@ public class AuthTest {
     }
 
     @Test
-        //TODO Тест невалидный логин
+
     void shouldCheckTheInvalidUsername() {
         var wrongLoginUser = generateWrongLoginUser("active");
         $("[data-test-id=login] input").setValue(wrongLoginUser.getLogin());
@@ -47,7 +47,7 @@ public class AuthTest {
     }
 
     @Test
-        //TODO Тест невалидный пароль
+
     void shouldCheckTheInvalidPassword() {
         var wrongPasswordUser = generateWrongPasswordUser("active");
         $("[data-test-id=login] input").setValue(wrongPasswordUser.getLogin());
@@ -56,7 +56,7 @@ public class AuthTest {
         $(withText("Неверно указан логин или пароль")).shouldBe(visible);
     }
 
-    @Test //TODO Тест авторизации с пустыми полями
+    @Test 
     void shouldCheckWithEmptyFields() {
         $("button[data-test-id=action-login]").click();
         $(withText("Поле обязательно для заполнения")).shouldBe(visible);
