@@ -56,7 +56,7 @@ public class AuthTest {
         $(withText("Неверно указан логин или пароль")).shouldBe(visible);
     }
 
-    @Test 
+    @Test
     void shouldCheckWithEmptyFields() {
         $("button[data-test-id=action-login]").click();
         $(withText("Поле обязательно для заполнения")).shouldBe(visible);
